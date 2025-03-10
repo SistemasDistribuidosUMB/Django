@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Noticias{% endblock %}
+
+{% block content %}
+    <h1>Noticias</h1>
+    <div class="gallery">
+        {% for noticia in news %}
+            <div class="noticias">
+                <img src="{{ noticia.imageurl }}" alt="{{ noticia.nombre }}">
+                <h3>{{ noticia.nombre }}</h3>
+                <p>{{ noticia.descripcion }}</p>
+            </div>
+        {% empty %}
+            <p>No hay Noticias disponibles.</p>
+        {% endfor %}
+    </div>
+{% endblock %}   
